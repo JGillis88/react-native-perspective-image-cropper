@@ -93,7 +93,9 @@ class CustomCrop extends Component {
                     dx: corner.x,
                     dy: corner.y,
                 },
-            ]),
+            ],
+            { useNativeDriver: false }
+            ),
             onPanResponderRelease: () => {
                 corner.flattenOffset();
                 this.updateOverlayString();
@@ -201,14 +203,8 @@ class CustomCrop extends Component {
                     >
                         <View
                             style={[
-                                s(this.props).handlerI,
-                                { left: -10, top: -10 },
-                            ]}
-                        />
-                        <View
-                            style={[
                                 s(this.props).handlerRound,
-                                { left: 31, top: 31 },
+                                { left: 60, top: 60 },
                             ]}
                         />
                     </Animated.View>
@@ -221,14 +217,8 @@ class CustomCrop extends Component {
                     >
                         <View
                             style={[
-                                s(this.props).handlerI,
-                                { left: 10, top: -10 },
-                            ]}
-                        />
-                        <View
-                            style={[
                                 s(this.props).handlerRound,
-                                { right: 31, top: 31 },
+                                { right: 60, top: 60 },
                             ]}
                         />
                     </Animated.View>
@@ -241,14 +231,8 @@ class CustomCrop extends Component {
                     >
                         <View
                             style={[
-                                s(this.props).handlerI,
-                                { left: -10, top: 10 },
-                            ]}
-                        />
-                        <View
-                            style={[
                                 s(this.props).handlerRound,
-                                { left: 31, bottom: 31 },
+                                { left: 60, bottom: 60 },
                             ]}
                         />
                     </Animated.View>
@@ -261,14 +245,8 @@ class CustomCrop extends Component {
                     >
                         <View
                             style={[
-                                s(this.props).handlerI,
-                                { left: 10, top: 10 },
-                            ]}
-                        />
-                        <View
-                            style={[
                                 s(this.props).handlerRound,
-                                { right: 31, bottom: 31 },
+                                { right: 60, bottom: 60 },
                             ]}
                         />
                     </Animated.View>
@@ -286,9 +264,9 @@ const s = (props) => ({
         backgroundColor: props.handlerColor || 'blue',
     },
     handlerRound: {
-        width: 39,
+        width: 20,
         position: 'absolute',
-        height: 39,
+        height: 20,
         borderRadius: 100,
         backgroundColor: props.handlerColor || 'blue',
     },
