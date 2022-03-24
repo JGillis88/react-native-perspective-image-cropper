@@ -204,7 +204,7 @@ class CustomCrop extends Component {
                         <View
                             style={[
                                 s(this.props).handlerRound,
-                                { left: 60, top: 60 },
+                                { left: 50, top: 50 },
                             ]}
                         />
                     </Animated.View>
@@ -218,7 +218,7 @@ class CustomCrop extends Component {
                         <View
                             style={[
                                 s(this.props).handlerRound,
-                                { right: 60, top: 60 },
+                                { right: 50, top: 50 },
                             ]}
                         />
                     </Animated.View>
@@ -232,7 +232,7 @@ class CustomCrop extends Component {
                         <View
                             style={[
                                 s(this.props).handlerRound,
-                                { left: 60, bottom: 60 },
+                                { left: 50, bottom: 50 },
                             ]}
                         />
                     </Animated.View>
@@ -246,7 +246,7 @@ class CustomCrop extends Component {
                         <View
                             style={[
                                 s(this.props).handlerRound,
-                                { right: 60, bottom: 60 },
+                                { right: 50, bottom: 50 },
                             ]}
                         />
                     </Animated.View>
@@ -257,18 +257,15 @@ class CustomCrop extends Component {
 }
 
 const s = (props) => ({
-    handlerI: {
-        borderRadius: 0,
-        height: 20,
-        width: 20,
-        backgroundColor: props.handlerColor || 'blue',
-    },
     handlerRound: {
-        width: 20,
+        width: 40,
         position: 'absolute',
-        height: 20,
+        height: 40,
         borderRadius: 100,
         backgroundColor: props.handlerColor || 'blue',
+        borderColor: props.handlerBorderColor || 'blue',
+        borderWidth: 3,
+        borderStyle: 'solid'
     },
     image: {
         width: Dimensions.get('window').width,
